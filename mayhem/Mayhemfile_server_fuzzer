@@ -1,0 +1,10 @@
+project: savantenvs/cpp-httplib
+target: server_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/server_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/server_fuzzer
+    libfuzzer: true
+    timeout: 10
+    dictionary: /mayhem/mayhem/server_fuzzer/server_fuzzer.dict
